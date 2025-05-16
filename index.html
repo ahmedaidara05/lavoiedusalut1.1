@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Application de lecture moderne avec mode sombre, zoom, favoris, lecture vocale et traduction">
+    <meta name="theme-color" content="#1e3a8a">
+    <title>La Voie du Salut</title>
+    <link rel="icon" href="book-icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="left-nav">
+            <button id="menu-btn" title="Sommaire">☰</button>
+        </nav>
+        <div class="header-content">
+            <h1>La Voie du Salut</h1>
+            <img src="book-cover.jpg" alt="Couverture du livre" class="header-book">
+        </div>
+        <nav class="right-nav">
+            <button id="theme-toggle" title="Mode sombre/clair">
+                <span class="icon">🌙</span>
+            </button>
+            <button id="voice-toggle" title="Lecture vocale">
+                <span class="icon">🔊</span>
+            </button>
+            <select id="voice-select" title="Choisir une voix"></select>
+            <button id="language-toggle" title="Changer de langue">
+                <span class="icon">🌐</span>
+            </button>
+            <button id="zoom-in" title="Agrandir le texte">+</button>
+            <button id="zoom-out" title="Réduire le texte">-</button>
+            <button id="favorites-btn" title="Voir les favoris">⭐</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page d'accueil -->
+        <section id="home" class="active">
+            <h2>Bienvenue dans votre livre numérique</h2>
+            <img src="book-cover.jpg" alt="Couverture du livre" class="book-cover">
+            <p> Loin de nous l’esprit de dénigrer, mais près de nous l’esprit d’éveiller.</p>
+            <h3>Chapitres</h3>
+            <ul id="chapter-list">
+                <li><a href="#chapter1">Chapitre 1 : Préambule</a></li>
+                <li><a href="#chapter2">Chapitre 2 : Avant-propos</a></li>
+                <li><a href="#chapter3">Chapitre 3 : La Genese</a></li>
+                <li><a href="#chapter4">Chapitre 4 : Qui est Dieu ?</a></li>
+                <li><a href="#chapter5">Chapitre 5 : Le Coran</a></li>
+            </ul>
+        </section>
+
+        <!-- Chapitres -->
+        <section id="chapter1" class="chapter">
+            <button class="close-btn" title="Retour à l'accueil">✖</button>
+            <h2>Chapitre 1 : L'Aube Nouvelle</h2>
+            <span class="favorite" data-chapter="chapter1" title="Ajouter aux favoris">⭐</span>
+            <div class="content" data-lang="fr">
+                <p>Loin de nous l’esprit de dénigrer, mais près de nous l’esprit d’éveiller. Ainsi donc, motivé par l’amour de la vérité et le respect que j’ai envers tous les non-musulmans, je m’adresse à vous (homme de Dieu, frère dans la foi), avec la sincère intention de ne me permettre, après avoir médité la parole de Dieu, de garder le minimum que j’ai acquis. Il est écrit dans le livre de Josué ; Que ce livre de la loi ne s’éloigne pas de ta bouche, et médite-le jour et nuit, afin que tu prennes garde à faire selon tout ce qui y est écrit ; car alors, tu feras réussir tes voies, et alors, tu prospèreras.</p>
+                <p>Elle savait que ce voyage changerait sa vie à jamais. Les étoiles s'effaçaient doucement, laissant place à une lumière dorée.</p>
+            </div>
+            <div class="content" data-lang="en" style="display: none;">
+                <p>The sun rose slowly over the lush hills, heralding a new day. Clara, a young adventurer, gazed at the horizon with hope...</p>
+                <p>She knew this journey would change her life forever. The stars faded gently, giving way to a golden light.</p>
+            </div>
+            <div class="content" data-lang="ar" style="display: none;">
+                <p>كانت الشمس ترتفع ببطء فوق التلال الخضراء، معلنة عن يوم جديد. كلارا، المغامرة الشابة، كانت تنظر إلى الأفق بأمل...</p>
+                <p>كانت تعلم أن هذه الرحلة ستغير حياتها إلى الأبد. تلاشت النجوم بهدوء، تاركة المجال لضوء ذهبي.</p>
+            </div>
+            <div class="chapter-nav">
+                <button class="prev-btn" disabled>← Précédent</button>
+                <button class="next-btn">Suivant →</button>
+            </div>
+        </section>
+        <section id="chapter2" class="chapter">
+            <button class="close-btn" title="Retour à l'accueil">✖</button>
+            <h2>Chapitre 2 : Les Ombres du Passé</h2>
+            <span class="favorite" data-chapter="chapter2" title="Ajouter aux favoris">⭐</span>
+            <div class="content" data-lang="fr">
+                <p>Dans les ruelles sombres de la vieille ville, des murmures parlaient d'un ancien artefact. Clara sentit un frisson la parcourir...</p>
+                <p>Les souvenirs de son enfance resurgissaient, comme des ombres dansant dans la nuit.</p>
+            </div>
+            <div class="content" data-lang="en" style="display: none;">
+                <p>In the dark alleys of the old town, whispers spoke of an ancient artifact. Clara felt a shiver run through her...</p>
+                <p>Memories of her childhood resurfaced, like shadows dancing in the night.</p>
+            </div>
+            <div class="content" data-lang="ar" style="display: none;">
+                <p>في الأزقة المظلمة للمدينة القديمة، كانت الهمسات تتحدث عن قطعة أثرية قديمة. شعرت كلارا بقشعريرة...</p>
+                <p>تذكرت ذكريات طفولتها، مثل الظلال التي ترقص في الليل.</p>
+            </div>
+            <div class="chapter-nav">
+                <button class="prev-btn">← Précédent</button>
+                <button class="next-btn">Suivant →</button>
+            </div>
+        </section>
+        <section id="chapter3" class="chapter">
+            <button class="close-btn" title="Retour à l'accueil">✖</button>
+            <h2>Chapitre 3 : Le Voyage Commence</h2>
+            <span class="favorite" data-chapter="chapter3" title="Ajouter aux favoris">⭐</span>
+            <div class="content" data-lang="fr">
+                <p>Clara embarqua sur un vieux navire, les vagues frappant la coque avec force. L'aventure l'attendait, mais aussi le danger...</p>
+                <p>Chaque vague semblait murmurer un secret oublié depuis des siècles.</p>
+            </div>
+            <div class="content" data-lang="en" style="display: none;">
+                <p>Clara boarded an old ship, the waves crashing against the hull with force. Adventure awaited her, but so did danger...</p>
+                <p>Each wave seemed to whisper a secret forgotten for centuries.</p>
+            </div>
+            <div class="content" data-lang="ar" style="display: none;">
+                <p>صعدت كلارا على متن سفينة قديمة، الأمواج تضرب الهيكل بقوة. المغامرة كانت تنتظرها، ولكن أيضًا الخطر...</p>
+                <p>كل موجة بدت وكأنها تهمس بسر منسي منذ قرون.</p>
+            </div>
+            <div class="chapter-nav">
+                <button class="prev-btn">← Précédent</button>
+                <button class="next-btn">Suivant →</button>
+            </div>
+        </section>
+        <section id="chapter4" class="chapter">
+            <button class="close-btn" title="Retour à l'accueil">✖</button>
+            <h2>Chapitre 4 : Secrets Révélés</h2>
+            <span class="favorite" data-chapter="chapter4" title="Ajouter aux favoris">⭐</span>
+            <div class="content" data-lang="fr">
+                <p>Dans une grotte cachée, Clara découvrit une inscription ancienne. Les mots semblaient vivants, pulsant d'une énergie mystérieuse...</p>
+                <p>Chaque symbole racontait une histoire, un fragment du passé oublié.</p>
+            </div>
+            <div class="content" data-lang="en" style="display: none;">
+                <p>In a hidden cave, Clara discovered an ancient inscription. The words seemed alive, pulsing with a mysterious energy...</p>
+                <p>Each symbol told a story, a fragment of the forgotten past.</p>
+            </div>
+            <div class="content" data-lang="ar" style="display: none;">
+                <p>في كهف مخفي، اكتشفت كلارا نقشًا قديمًا. بدت الكلمات حية، تنبض بطاقة غامضة...</p>
+                <p>كل رمز يروي قصة، جزءًا من الماضي المنسي.</p>
+            </div>
+            <div class="chapter-nav">
+                <button class="prev-btn">← Précédent</button>
+                <button class="next-btn">Suivant →</button>
+            </div>
+        </section>
+        <section id="chapter5" class="chapter">
+            <button class="close-btn" title="Retour à l'accueil">✖</button>
+            <h2>Chapitre 5 : L'Horizon Lointain</h2>
+            <span class="favorite" data-chapter="chapter5" title="Ajouter aux favoris">⭐</span>
+            <div class="content" data-lang="fr">
+                <p>Debout sur une falaise, Clara contemplait l'horizon. Le vent portait des promesses de liberté, mais aussi d'incertitude...</p>
+                <p>Elle savait que son destin était lié à cet horizon lointain, quelque part au-delà des mers.</p>
+            </div>
+            <div class="content" data-lang="en" style="display: none;">
+                <p>Standing on a cliff, Clara gazed at the horizon. The wind carried promises of freedom, but also uncertainty...</p>
+                <p>She knew her destiny was tied to that distant horizon, somewhere beyond the seas.</p>
+            </div>
+            <div class="content" data-lang="ar" style="display: none;">
+                <p>واقفة على جرف، تأملت كلارا الأفق. حملت الرياح وعودًا بالحرية، ولكن أيضًا عدم اليقين...</p>
+                <p>كانت تعلم أن مصيرها مرتبط بذلك الأفق البعيد، في مكان ما وراء البحار.</p>
+            </div>
+            <div class="chapter-nav">
+                <button class="prev-btn">← Précédent</button>
+                <button class="next-btn" disabled>Suivant →</button>
+            </div>
+        </section>
+
+        <!-- Page des favoris -->
+        <section id="favorites" class="chapter">
+            <button class="close-btn" title="Retour à l'accueil">✖</button>
+            <h2>Vos Chapitres Favoris</h2>
+            <ul id="favorites-list"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
